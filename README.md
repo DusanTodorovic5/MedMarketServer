@@ -18,7 +18,7 @@ Medicine Market features SQL-Like query syntax where user can specify filter, ex
  - ``buy for Dusan where price >= 5 and purpose = Flu and boxes = 2``
  - ``buy anyways for Doctor where name != K21 and name != M21 and price <= 20 and price >= 12 and boxes = 4``
  
-User can specify if he wants to get info(typing ``select``) or buy medicine(typing ``buy`` or ``buy anyways). Difference between mods of buying are that if user specifies multiples queryes, with ``buy``, he will buy them only if all of them are avaliable, where with ``buy anyways`` he will buy those that are avaliable.
+User can specify if he wants to get info(typing ``select``) or buy medicine(typing ``buy`` or ``buy anyways``). Difference between mods of buying are that if user specifies multiples queryes, with ``buy``, he will buy them only if all of them are avaliable, where with ``buy anyways`` he will buy those that are avaliable.
 User can filter by:
 
  - name
