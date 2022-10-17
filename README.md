@@ -29,7 +29,7 @@ User can filter by:
 
 ## Native TCP
 
-Native TCP uses wrapper around posix tcp sockets. If you wish to run it, you should just write small wrapper around given functions.
+Native TCP uses wrapper around posix tcp sockets. If you wish to run it, you should just write small wrapper around given methods.
 
 ## WebSocket
 
