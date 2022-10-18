@@ -1,7 +1,7 @@
 # Medicine Market Server
-Native TCP and Websocket server with dedicated client, all written in C++
+Native TCP, Rest and Websocket server with dedicated client, all written in C++
 
-Both versions of project work the same way. 
+All versions of project work the same way. 
 Custom authentication is implemented in C++, currently passwords are hashed using std::hasher which is not the safest method to do it(or safe at all), but it is fairly easy and straight-forward to replace the hash function with custom library. 
 User has ability to send query for given medicine, to buy it, select it or to authenticate. The types of messages that user can send are:
 
@@ -34,3 +34,14 @@ Native TCP uses wrapper around posix tcp sockets. If you wish to run it, you sho
 ## WebSocket
 
 WebSocket uses [websocketpp](https://github.com/zaphoyd/websocketpp)
+
+## Rest Api
+
+Features custom tokenizer with timeout of 30 seconds, refreshed once a new query is sent.
+Possible endpoints are
+ - login[POST] - with headers Username and Password - returns unique token
+ - register[POST] - with headers Username and Password - returns if successfull
+ - select[GET] - header with token and with query given as parameters for example ``select/name=Q21&price=20&priceOper=<``
+     Oper is argument specifing type of operand for price, in this case, price < 20
+ - buy[POST] - header with token and body with full query like with sockets, for example ``name = Q21 and price < 20 and boxes = 3``
+ - buyAnyways[POST] - header with token and body full query like sockets, for example ``name = Q21 and price < 20 and boxes = 3``
